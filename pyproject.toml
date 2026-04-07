@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "table-diff"
+version = "0.1.0"
+description = "Cell-level table diffing for Polars"
+readme = "README.md"
+requires-python = ">=3.11.1"
+dependencies = [
+  "polars>=1.38",
+  "polars-checkpoint>=0.1.2",
+]
+
+[project.optional-dependencies]
+spss = [
+  "pyreadstat",
+]
+hive = [
+  "boto3",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
