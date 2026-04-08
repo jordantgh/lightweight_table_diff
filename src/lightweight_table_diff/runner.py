@@ -72,7 +72,7 @@ def run_comparison(job: dict, **context) -> ComparisonResult:
         keys,
         cols,
         batch_size=job.get("batch_size", 50),
-        join_type=job.get("join_type", "full"),
+        join_type="inner",
     )
 
     n = diff.select(pl.len()).collect().item()

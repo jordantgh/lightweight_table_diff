@@ -20,7 +20,7 @@ def diff_tbls(
     after: pl.LazyFrame,
     id_cols: list[str],
     compare_cols: list[str] | None = None,
-    join_type: str = "full",
+    join_type: str = "inner",
 ) -> pl.LazyFrame:
     if compare_cols is None:
         compare_cols = list(before.drop(*id_cols).collect_schema().keys())
@@ -69,7 +69,7 @@ def batch_diff_tbls(
     id_cols: list[str],
     compare_cols: list[str] | None = None,
     batch_size: int = 50,
-    join_type: str = "full",
+    join_type: str = "inner",
 ) -> pl.LazyFrame:
     if compare_cols is None:
         compare_cols = list(before.drop(*id_cols).collect_schema().keys())
