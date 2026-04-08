@@ -11,7 +11,7 @@ def load_sav(source_def: dict) -> pl.LazyFrame:
         import pyreadstat
     except ImportError:
         raise ImportError(
-            "pyreadstat is required for .sav files: pip install pyreadstat"
+            "pyreadstat is required for .sav files: pip install 'lightweight-table-diff[spss]'"
         ) from None
 
     pdf, _meta = pyreadstat.read_sav(
