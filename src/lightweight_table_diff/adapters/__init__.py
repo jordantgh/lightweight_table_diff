@@ -25,7 +25,9 @@ def load(source_def: dict, **context: Any) -> pl.LazyFrame:
 from .csv import load_csv      # noqa: E402
 from .parquet import load_parquet  # noqa: E402
 from .sav import load_sav      # noqa: E402
+from .hive_s3 import load_hive # noqa: E402
 
 register("parquet", load_parquet)
 register("csv", load_csv)
 register("sav", load_sav)
+register("hive", load_hive)
